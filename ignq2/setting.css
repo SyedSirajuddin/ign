@@ -1,0 +1,51 @@
+/* 
+    Document   : setting
+    Created on : Apr 21, 2012, 12:58:39 AM
+    Author     : Syed
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*root { 
+    display: block;
+}*/
+
+h1 {
+    color:ivory;
+    background-color:black;
+    text-align:center;
+    
+    }
+    
+h2 {
+    font-family:"Times New Roman", Times, serif;
+    font-size: 1.5em;
+    color:white;
+    background-color:transparent;    
+    position:fixed;
+    text-align: center;
+    /*left: 45%;*/
+    
+    bottom:50%;
+    
+  }
+p {
+    color:red;
+    margin-left:20px;
+    }
+body {
+    font-size: 100%;
+    background-color:white;
+    background-image:url('magic8ball3.jpg');
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-attachment:fixed;
+    background-size:contain;
+    }
+#Test {
+    position: absolute;
+    visibility: hidden;
+    height: auto;
+    width: auto;
+}
+

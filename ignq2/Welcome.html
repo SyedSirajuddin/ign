@@ -1,0 +1,163 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor. Special thanks to
+http://www.javascripter.net/faq/browserw.htm for helping with 
+window sizing problems
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+        .center
+        {
+        margin:auto;
+        width:70%;
+        background-color:#b0e0e6;
+        }
+        </style>
+        <script type="text/javascript">
+            function windowHeight() {
+                var winW = 630, winH = 460;
+                if (document.body && document.body.offsetWidth) {
+                winW = document.body.offsetWidth;
+                winH = document.body.offsetHeight;
+                }
+                if (document.compatMode=='CSS1Compat' &&
+                    document.documentElement &&
+                    document.documentElement.offsetWidth ) {
+                winW = document.documentElement.offsetWidth;
+                winH = document.documentElement.offsetHeight;
+                }
+                if (window.innerWidth && window.innerHeight) {
+                winW = window.innerWidth;
+                winH = window.innerHeight;
+                }
+                
+                return winH;
+            }
+            
+            function windowWidth() {
+                var winW = 630, winH = 460;
+                if (document.body && document.body.offsetWidth) {
+                winW = document.body.offsetWidth;
+                winH = document.body.offsetHeight;
+                }
+                if (document.compatMode=='CSS1Compat' &&
+                    document.documentElement &&
+                    document.documentElement.offsetWidth ) {
+                winW = document.documentElement.offsetWidth;
+                winH = document.documentElement.offsetHeight;
+                }
+                if (window.innerWidth && window.innerHeight) {
+                winW = window.innerWidth;
+                winH = window.innerHeight;
+                }
+                
+                return winW;
+            }
+            function warning() {
+                alert("Warning: We are not responsible for any consequences of heading/not heading advice!");
+            }
+            function getRandomInt(min, max)
+            {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            function chooseMess() {
+                var mess = "";
+                var rand_no = getRandomInt(10,0);
+                
+                switch(rand_no) {
+                    case 0:
+                        mess = "It is certain";
+                        break;
+                    case 1:
+                        mess = "It is decidedly so";
+                        break;
+                    case 2:
+                        mess = "Without a doubt";
+                        break;
+                    case 3:
+                        mess = "Yes – definitely";
+                        break;
+                    case 4:
+                        mess = "You may rely on it";
+                        break;
+                    case 5:
+                        mess = "As I see it, yes";
+                        break;
+                    case 6:
+                        mess = "Most likely";
+                        break;
+                    case 7:
+                        mess = "Outlook good";
+                        break;
+                    case 8:
+                        mess = "Signs point to yes";
+                        break;
+                    case 9:
+                        mess = "Yes";
+                        break;
+                    case 10:
+                        mess = "Reply hazy, try again";
+                        break;
+                    case 11:
+                        mess = "Ask again later";
+                        break;
+                    case 12:
+                        mess = "Better not tell you now";
+                        break;
+                    case 13:
+                        mess = "Cannot predict now";
+                        break;
+                    case 14:
+                        mess = "Concentrate and ask again";
+                        break;
+                    case 15:
+                        mess = "Don't count on it";
+                        break;
+                    case 16:
+                        mess = "My reply is no";
+                        break;
+                    case 17:
+                        mess = "My sources say no";
+                        break;
+                    case 18:
+                        mess = "Outlook not so good";
+                        break;
+                    case 19:
+                        mess = "Very doubtful";
+                        break;
+                    default:
+                        mess = "GOD HELP US ALL!";
+                        break;             
+                }
+                
+                return mess;
+            }
+            function displayMess() {
+                warning();
+                
+                var mess = chooseMess();
+                
+                /*var test = document.getElementById("Test").innerHTML=mess;
+                test.style.fontSize = 24;
+                var height = (test.clientHeight + 1);
+                var width = (test.clientWidth + 1);*/
+
+                document.getElementById("message").style.left = ((windowWidth()/2) - (mess.length  * 5)) + "px";
+                document.getElementById("message").innerHTML=mess;
+            }
+        </script>
+        <link rel="stylesheet" type="text/css" href="setting.css" />
+        <title>Welcome</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Ask the magic 8 ball any questions:</h1>
+        <div id="Test"></div>
+        <input type="button" onclick="displayMess()" value="Ask" />
+        <h2 id="message"></h2>
+        
+
+    </body>
+</html>
